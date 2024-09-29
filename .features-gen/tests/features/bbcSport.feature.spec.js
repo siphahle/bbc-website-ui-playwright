@@ -1,4 +1,4 @@
-/** Generated from: tests\bbcSport.feature */
+/** Generated from: tests\features\bbcSport.feature */
 import { test } from "playwright-bdd";
 
 test.describe("Verify BBC Sport Page Title", () => {
@@ -29,7 +29,7 @@ test.describe("Verify BBC Sport Page Title", () => {
 
 test.use({
   $test: ({}, use) => use(test),
-  $uri: ({}, use) => use("tests\\bbcSport.feature"),
+  $uri: ({}, use) => use("tests\\features\\bbcSport.feature"),
   $bddFileMeta: ({}, use) => use(bddFileMeta),
 });
 
