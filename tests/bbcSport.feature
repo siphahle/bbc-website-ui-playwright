@@ -11,13 +11,8 @@ Feature:  Verify BBC Sport Page Title
      When I click on the Results link
      Then I should see the heading "Formula one Results"
 
-     Scenario Outline: User clicks the Results link and verifies the heading
-     Given I am on the BBC Formula1 Results page "https://www.bbc.com/sport/formula1/results"
-     When I click on the 2023 Results link
-     Then I should verify the top3 leaders on the table
-
-     Examples:
-      | Position | Driver           | Team       |
-      | 1        | Max Verstappen   | Red Bull   |
-      | 2        | Charles Leclerc  | Ferrari    |
-      | 3        | George Russell   | Mercedes   |
+     Scenario: User verifies the Formula1 table 2023 results
+     Given I am on the Formula1 results page "https://www.bbc.com/sport/formula1/results"
+     When I click on the 2023results link
+     When I retrieve the top three winners
+     Then I should see the winners are "Max Verstappen", "Charles Leclerc", and "George Russell"

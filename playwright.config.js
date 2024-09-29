@@ -2,8 +2,8 @@
 const { defineConfig, devices } = require('@playwright/test');
 import { defineBddConfig } from 'playwright-bdd';
 const testDir = defineBddConfig({
- paths: ['ecomlogin.feature'],
- require:['ecomstepslogin.js']
+ paths: ['tests/bbcSport.feature'],
+ require:['tests/bbcSportSteps.js']
 });
 
 /**
@@ -16,7 +16,7 @@ const testDir = defineBddConfig({
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  //timeout: 120000, 
+  //timeout: 160000, 
   testDir,
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -35,13 +35,17 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    screenshot:'only-on-failure',
+    video:'retain-on-failure'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome']
+        
+       },
     },
 
    /* {
