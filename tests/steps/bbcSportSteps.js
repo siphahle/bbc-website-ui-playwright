@@ -97,7 +97,7 @@ if (this.winners.length !== expectedWinners.length) {
 }
 
 if (JSON.stringify(this.winners) !== JSON.stringify(expectedWinners)) {
-    throw new Error(`Expected winners to be ${JSON.stringify(expectedWinners)}, but got ${JSON.stringify(this.winners)}`);
+    throw new Error('Expected winners to be ${JSON.stringify(expectedWinners)}, but got ${JSON.stringify(this.winners)}');
 }
 console.log('Expected Winners:', expectedWinners);
 });
