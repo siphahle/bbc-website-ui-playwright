@@ -2,8 +2,9 @@
 const { defineConfig, devices } = require('@playwright/test');
 import { defineBddConfig } from 'playwright-bdd';
 const testDir = defineBddConfig({
- paths: ['tests/features/bbcSport.feature'],
- require:['tests/steps/bbcSportSteps.js']
+  importTestFrom: 'tests/fixtures/fixture.js',
+  paths: ['tests/features/bbcSport.feature'],
+  require:['tests/steps/bbcSportSteps.js']
  
 });
 

@@ -1,7 +1,8 @@
-import { expect } from "@playwright/test";
-import test from "node:test";
+//import { expect } from "@playwright/test";
+import {test} from '../fixtures/fixtures'
+//import test from "node:test";
 import { createBdd } from "playwright-bdd";
-const {Given, When,Then,Before}= createBdd();
+const {Given, When,Then,Before}= createBdd(test);
 const { chromium } = require('playwright');
 //const { expect } = require('chai');
 
@@ -16,9 +17,9 @@ Before(async function () {
 // Verify the title
 
 
-Given('I am on the BBC website Sports page {string}', async ({page}, url) => {
+Given('I am on the BBC website Sports page {string}', async ({bbcPage}, url) => {
     
-    await page.goto(url)
+    await bbcPage.navigateToUrl(url);
   });
 
 
